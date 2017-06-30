@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Taco Regions</title>
+</head>
+<body>
+<h1>These are regions where the Tacos are located</h1>
+<ul th:each="currentRegion:${region}">
+		<li><a th:href="@{/joints(id=${currentRegion.id})}" th:text="${currentRegion.name}"></a></li>
+ </ul>
+
+</body>
+</html>

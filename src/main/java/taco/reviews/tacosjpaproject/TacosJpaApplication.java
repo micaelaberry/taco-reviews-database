@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TacosJpaProjectApplication {
+public class TacosJpaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TacosJpaProjectApplication.class, args);
+		SpringApplication.run(TacosJpaApplication.class, args);
 	}
 }

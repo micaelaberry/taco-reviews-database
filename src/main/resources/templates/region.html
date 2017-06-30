@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Taco Region Detail</title>
+</head>
+<body>
+<h1 th:text="${region.name}"></h1>
+	<ul>
+		<li th:each="joints: ${region.joints}">
+		<a th:href= "@{/joint(id=${joint.id})}" th:text="${joint.name}"></a>
+		</li>
+	</ul>
+</body>
+</html>

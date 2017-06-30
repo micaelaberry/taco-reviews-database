@@ -16,27 +16,27 @@ public class TacoController {
 	private JointRepository jointRepo;
 
 	@RequestMapping("/regions")
-	public String retrieveStates(Model model) {
-		model.addAttribute("states", regionRepo.findAll());
+	public String retrieveRegion(Model model) {
+		model.addAttribute("region", regionRepo.findAll());
 		return "regionList";
 
 	}
 
 	@RequestMapping("/joints")
-	public String retrieveCities(Model model) {
-		model.addAttribute("cities", jointRepo.findAll());
-		return "jointsList";
+	public String retrieveJoints(Model model) {
+		model.addAttribute("joints", jointRepo.findAll());
+		return "jointList";
 	}
 
 	@RequestMapping("/region")
-	public String retrieveState(@RequestParam("id") long id, Model model) {
-		model.addAttribute(regionRepo.findOne(id));
+	public String retrieveRegion(@RequestParam("id") long id, Model model) {
+		model.addAttribute("region", regionRepo.findOne(id));
 		return "region";
 	}
 
 	@RequestMapping("/joint")
-	public String retrieveCity(@RequestParam("id") long id, Model model) {
-		model.addAttribute(jointRepo.findOne(id));
+	public String retrieveJoint(@RequestParam("id") long id, Model model) {
+		model.addAttribute("joint", jointRepo.findOne(id));
 		return "joint";
 	}
 
