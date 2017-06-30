@@ -16,16 +16,13 @@ public class Region {
 	private String name;
 
 	@OneToMany(mappedBy="region")
-	private Set<Joint> joint;
+	private Set<Joint> tacos;
 	
-	public Set<Joint> getJoints() {
-		return joint;
+	public Set<Joint> getTacos() {
+		return tacos;
 	}
-
-	public void setCities(Set<Joint> joint) {
-		this.joint = joint;
-	}
-
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -40,5 +37,6 @@ public class Region {
 
 	public Region() {
 	}
+	
 
 }

@@ -1,6 +1,6 @@
 package taco.reviews.tacosjpaproject;
 
-public class TacoReview {
+public class Taco {
 	//right click- click source- go to 'Generate Getters and Setters'
 
 	private long id; // should be long
@@ -29,13 +29,13 @@ public class TacoReview {
 		return description;
 	}
 
-	public TacoReview(long id, String title, String imageURL, String taste, String description) {
-		this.id = id;
+	public Taco(Joint condado, String title, String imageURL, String taste, String description) {
 		this.title = title;
 		this.imageURL = imageURL;
 		this.taste = taste;
 		this.description = description;
 
 	}
+	
 
 }

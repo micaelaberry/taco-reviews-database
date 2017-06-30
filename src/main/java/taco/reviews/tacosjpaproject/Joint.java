@@ -1,9 +1,13 @@
 package taco.reviews.tacosjpaproject;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+
 
 @Entity
 public class Joint {
@@ -11,22 +15,26 @@ public class Joint {
 	@Id
 	@GeneratedValue
 	private Long id;
-
+	private String name;
+	
 	@ManyToOne
 	private Region region;
-
+	
 	public Region getRegion() {
 		return region;
 	}
 
-	public void setState(Region region) {
+	public void setRegions(Region region) {
 		this.region = region;
 	}
 
-	private String name;
 
 	public Long getId() {
 		return id;
+	}
+	
+	public String getName() {
+		return name;
 	}
 
 	public Joint(Region region, String name) {
@@ -34,10 +42,8 @@ public class Joint {
 		this.name = name;
 	}
 
-	public String getName() {
-		return name;
-	}
 
 	private Joint() {
 	}
+	
 }

@@ -4,11 +4,13 @@
 <title>Taco Joints</title>
 </head>
 <body>
-<h1>These are the taco joints located in this region</h1>
+	<h1>These are the taco joints located in this region</h1>
 
- <ul th:each="currentJoint:${joint}">
-		<li><a th:href="@{/joint(id=${currentJoint.id})}" th:text="${currentJoint.name}"></a></li>
- </ul>
+	<ul>
+		<li th:each="currentJoint:${region.tacos}">
+		<a th:href="@{/joint(id=${currentJoint.id})}" th:text="${currentJoint.name}"></a>
+		</li>
+	</ul>
 
 </body>
 </html>
