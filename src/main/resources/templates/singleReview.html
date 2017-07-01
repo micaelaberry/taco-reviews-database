@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="styles.css"></link>
+
+<head>
+<title>Single Reviews</title>
+</head>
+<header>
+	<h1>Columbus Tacos Reviews</h1>
+</header>
+<body>
+	<div class="container">
+	
+		<div th:each="tacoJoint: ${tacoJoint}">
+		<h3 th:text="${tacoJoint.name}"></h3>
+
+			<img class="images" th:src="${tacoJoint.imageURL}" />
+			<p th:text="${tacoJoint.review}"></p>
+			<p th:text="${tacoJoint.taste}"></p>
+
+			<a th:href="@{/tacoregions(id=${regionsAsCollection})}">Click to
+				go back to all the reviews</a>
+		</div>
+</div>
+</body>
+</html>

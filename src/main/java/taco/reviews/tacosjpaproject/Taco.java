@@ -1,4 +1,4 @@
-package taco.reviews.tacosjpaproject;
+             package taco.reviews.tacosjpaproject;
 
 public class Taco {
 	//right click- click source- go to 'Generate Getters and Setters'
@@ -29,7 +29,7 @@ public class Taco {
 		return description;
 	}
 
-	public Taco(Joint condado, String title, String imageURL, String taste, String description) {
+	public Taco(TacoJoint condado, String title, String imageURL, String taste, String description) {
 		this.title = title;
 		this.imageURL = imageURL;
 		this.taste = taste;

@@ -16,9 +16,9 @@ public class Region {
 	private String name;
 
 	@OneToMany(mappedBy="region")
-	private Set<Joint> tacos;
+	private Set<TacoJoint> tacos;
 	
-	public Set<Joint> getTacos() {
+	public Set<TacoJoint> getTacos() {
 		return tacos;
 	}
 	

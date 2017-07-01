@@ -13,26 +13,26 @@ public class TacoController {
 	private RegionRepository regionRepo;
 
 	@Resource
-	private JointRepository jointRepo;
+	private TacoJointRepository jointRepo;
 
 	
-	@RequestMapping("/regions")
+	@RequestMapping("/tacoregions") //returns all regions for tacos
 	public String retrieveRegion(Model model) {
 		model.addAttribute("region", regionRepo.findAll());
 		return "regionList";
 	}
 
-	@RequestMapping("/joints")
+	@RequestMapping("/tacojoints") //returns taco joints for specific region
 	public String retrieveJoints(@RequestParam("id") long id, Model model) {
 		model.addAttribute(regionRepo.findOne(id));
-		return "jointList";
+		return "tacoJointList";
 	}
 
 
-	@RequestMapping("/joint")
-	public String retrieveJoint(@RequestParam("id") long id, Model model) {
-		model.addAttribute("joint", jointRepo.findOne(id));
-		return "jointDetail";
+	@RequestMapping("/singleReview") //
+	public String retrieveSingleReview(@RequestParam("id") long id, Model model) {
+		model.addAttribute(jointRepo.findOne(id));
+		return "singleReview";
 	}
 
 }
