@@ -29,7 +29,7 @@ public class TacoController {
 	}
 
 
-	@RequestMapping("/singleReview") //
+	@RequestMapping("/singleReview") //pulls one review
 	public String retrieveSingleReview(@RequestParam("id") long id, Model model) {
 		model.addAttribute(jointRepo.findOne(id));
 		return "singleReview";
