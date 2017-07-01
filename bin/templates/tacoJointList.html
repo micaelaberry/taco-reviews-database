@@ -12,9 +12,9 @@
 	<h3>These are the taco joints located in this region</h3>
 
 	<ul>
-		<li th:each="currentJoint:${region.tacos}">
-		<img class="images1" th:src="${currentJoint.imageURL}" />
-		<a th:href="@{/singleReview(id=${currentJoint.id})}" th:text="${currentJoint.name}"></a>		
+		<li th:each="currentTacoJoint:${region.tacos}">
+		<img class="images1" th:src="${currentTacoJoint.imageURL}" />
+		<a th:href="@{/singleReview(id=${currentTacoJoint.id})}" th:text="${currentTacoJoint.name}"></a>		
 		</li>
 	</ul>
 </div>
