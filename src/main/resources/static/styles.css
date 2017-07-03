@@ -46,6 +46,7 @@ h3 {
 	height: 200px;
 	margin: 5px;
 	border: solid black;
+	display: column-reverse;
 }
 
 .images {
@@ -73,6 +74,29 @@ div {
 footer {
 	padding: 10px;
 	color: white;
-	background-color: black;
+	background-color: #FC4A1A;
 	text-align: center;
+}
+.button{
+	background-color: #373737;
+    padding: 15px 32px;
+    text-align: center;
+    margin: 10px;
+    font-size: 16px;
+    box-shadow: 0 8px 16px 0 ;
+    width: 250px;
+    border-radius: 12px;
+    display: column;
+    font-weight: bold;
+   
+}
+
+ .button:hover {
+    background-color: #4ABDAC;
+}
+a:visited {
+    color: #FC4A1A;
+    font-weight: bold;
+}
+
 }

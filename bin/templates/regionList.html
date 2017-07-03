@@ -10,11 +10,13 @@
 <body>
 	<div class="container">
 		<h3>These are regions where the Tacos are located</h3>
+		
 		<ul id="liststyle" th:each="currentRegion:${region}">
-			<li><a th:href="@{/tacojoints(id=${currentRegion.id})}"
-				th:text="${currentRegion.name}"></a></li>
+			<li><button class="button"><a th:href="@{/tacojoints(id=${currentRegion.id})}"
+				th:text="${currentRegion.name}"></a></button></li>
 		</ul>
 		</div>
-</body> 
+</body>
+<footer>Columbus Taco Reviews Copyright 2017</footer> 
 </html>
 

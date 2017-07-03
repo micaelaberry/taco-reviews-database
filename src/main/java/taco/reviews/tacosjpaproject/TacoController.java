@@ -22,8 +22,8 @@ public class TacoController {
 		return "regionList";
 	}
 
-	@RequestMapping("/tacojoints") //returns taco joints for specific region
-	public String retrieveJoints(@RequestParam("id") long id, Model model) {
+	@RequestMapping("/tacojoints") //returns taco joints from specific region
+	public String retrieveTacoJoints(@RequestParam("id") long id, Model model) {
 		model.addAttribute(regionRepo.findOne(id));
 		return "tacoJointList";
 	}

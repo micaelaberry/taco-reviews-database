@@ -8,15 +8,22 @@
 	<h1>Columbus Tacos Reviews</h1>
 </header>
 <body>
-<div class="container">
-	<h3>These are the taco joints located in this region</h3>
+	<div class="container">
+		<h3>These are the taco joints located in this region</h3>
 
-	<ul id= "liststyle">
-		<li th:each="currentTacoJoint:${region.tacos}">
-		<img class="images1" th:src="${currentTacoJoint.imageURL}" />
-		<a th:href="@{/singleReview(id=${currentTacoJoint.id})}" th:text="${currentTacoJoint.name}"></a>		
-		</li>
-	</ul>
-</div>
+		<ul id="liststyle">
+			<li th:text="${region.name}"></li>
+			<li th:each="currentTacoJoint:${region.tacos}"><img
+				class="images1" th:src="${currentTacoJoint.imageURL}" /> <br>
+			<button class="button">
+					<a th:href="@{/singleReview(id=${currentTacoJoint.id})}"
+						th:text="${currentTacoJoint.name}"></a>
+				</button> </br></li>
+		</ul>
+		<br>
+		<a th:href="@{/tacoregions(id=${regionsAsCollection})}">Click to
+			go back to all the Taco Regions</a></br>
+	</div>
 </body>
+<footer>Columbus Taco Reviews Copyright 2017</footer>
 </html>
