@@ -22,7 +22,8 @@ body {
 	margin: 0 auto;
 	padding-left: 20px;
 } 
-.lists {
+
+#liststyle li{
 	list-style-type:none;
 }
 

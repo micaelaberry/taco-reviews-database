@@ -11,7 +11,7 @@
 <div class="container">
 	<h3>These are the taco joints located in this region</h3>
 
-	<ul>
+	<ul id= "liststyle">
 		<li th:each="currentTacoJoint:${region.tacos}">
 		<img class="images1" th:src="${currentTacoJoint.imageURL}" />
 		<a th:href="@{/singleReview(id=${currentTacoJoint.id})}" th:text="${currentTacoJoint.name}"></a>		

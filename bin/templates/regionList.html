@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<h3>These are regions where the Tacos are located</h3>
-		<ul th:each="currentRegion:${region}">
+		<ul id="liststyle" th:each="currentRegion:${region}">
 			<li><a th:href="@{/tacojoints(id=${currentRegion.id})}"
 				th:text="${currentRegion.name}"></a></li>
 		</ul>
