@@ -17,8 +17,9 @@ public class TacoJoint {
 	private Long id;
 	private String name;
 	private String imageURL;
+	
+	@Lob
 	private String taste;
-
 
 	@Lob
 	private String review;
@@ -46,7 +47,6 @@ public class TacoJoint {
 		return taste;
 	}
 
-
 	public String getReview() {
 		return review;
 	}
@@ -58,7 +58,7 @@ public class TacoJoint {
 	private TacoJoint() {
 	}
 
-	public TacoJoint(Region region, Long id, String name, String imageURL, String review, String taste) {
+	public TacoJoint(Region region, Long id, String name, String imageURL, String taste, String review) {
 		this.region = region;
 		this.id = id;
 		this.name = name;
@@ -66,10 +66,6 @@ public class TacoJoint {
 		this.review = review;
 		this.taste = taste;
 	}
-	
-	public TacoJoint(Region region, String imageURL){
-		this.imageURL = imageURL;
-		this.region = region;
-	}
+
 
 }
