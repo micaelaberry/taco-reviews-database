@@ -49,6 +49,20 @@ h3 {
 	display: column-reverse;
 }
 
+.images2 {
+	max-width: 30%;
+	height: auto;
+	margin: 5px;
+}
+
+.images2container{
+	
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-content: right;
+}
+
 .images {
 	max-width: 60%;
 	height: auto;
@@ -84,7 +98,7 @@ footer {
     margin: 10px;
     font-size: 16px;
     box-shadow: 0 8px 16px 0 ;
-    width: 250px;
+    width: 150px;
     border-radius: 12px;
     display: column;
     font-weight: bold;
@@ -95,6 +109,11 @@ footer {
     background-color: #4ABDAC;
 }
 a:visited {
+    color: #FC4A1A;
+    font-weight: bold;
+}
+
+a:link {
     color: #FC4A1A;
     font-weight: bold;
 }

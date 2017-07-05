@@ -8,11 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
-
 @Entity
 public class TacoJoint {
-
-
 
 	@Id
 	@GeneratedValue
@@ -20,13 +17,13 @@ public class TacoJoint {
 	private String name;
 	private String imageURL;
 	private String taste;
-	
+
 	@Lob
 	String review;
-	
+
 	@ManyToOne
 	private Region region;
-	
+
 	public Region getRegion() {
 		return region;
 	}
@@ -35,29 +32,28 @@ public class TacoJoint {
 		this.region = region;
 	}
 
-
 	public Long getId() {
 		return id;
 	}
+
 	public String getImageURL() {
 		return imageURL;
 	}
-	
+
 	public String getTaste() {
 		return taste;
 	}
-	
+
 	public String getReview() {
 		return review;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
 
 	private TacoJoint() {
 	}
-	
 
 	public TacoJoint(Region region, Long id, String name, String imageURL, String review, String taste) {
 		this.region = region;
@@ -66,6 +62,11 @@ public class TacoJoint {
 		this.imageURL = imageURL;
 		this.review = review;
 		this.taste = taste;
+	}
+	
+	public TacoJoint(Region region, String imageURL){
+		this.imageURL = imageURL;
+		this.region = region;
 	}
 
 }
