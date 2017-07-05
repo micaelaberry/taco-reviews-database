@@ -9,7 +9,7 @@
 </header>
 <body>
 	<div class="container">
-			<h3>These are regions where the best Columbus Tacos are located</h3>
+		<h3>These are regions where the best Columbus Tacos are located</h3>
 		<div class="images2container">
 			<ul id="liststyle" th:each="currentRegion:${region}">
 				<li><button class="button">
@@ -19,6 +19,7 @@
 			</ul>
 			<img th:src="@{/images/ohioTaco.jpg}" src="/images/ohioTacos.jpg"
 				class="images2" alt="tacos" />
+
 		</div>
 	</div>
 </body>

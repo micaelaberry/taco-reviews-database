@@ -56,9 +56,10 @@ h3 {
 }
 
 .images2container{
-	
+	display: flex-end;
 	flex-direction: row-reverse;
 	flex-wrap: wrap;
+	flex-flow: row-wrap;
 	justify-content: flex-end;
 	align-content: right;
 }
