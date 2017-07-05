@@ -21,10 +21,10 @@ body {
 	max-width: 90%;
 	margin: 0 auto;
 	padding-left: 20px;
-} 
+}
 
-#liststyle li{
-	list-style-type:none;
+#liststyle li {
+	list-style-type: none;
 }
 
 h1 {
@@ -52,16 +52,13 @@ h3 {
 .images2 {
 	max-width: 30%;
 	height: auto;
-	margin: 5px;
+	margin: 1px;
 }
 
-.images2container{
-	display: flex-end;
-	flex-direction: row-reverse;
-	flex-wrap: wrap;
-	flex-flow: row-wrap;
-	justify-content: flex-end;
-	align-content: right;
+.images2container {
+	display: inline-block;
+	flex-direction: row;
+	align-content: left;
 }
 
 .images {
@@ -86,37 +83,50 @@ div {
 	align-content: center;
 }
 
+.button {
+	background-color: #373737;
+	padding: 15px 32px;
+	text-align: center;
+	margin: 10px;
+	font-size: 16px;
+	box-shadow: 0 8px 16px 0;
+	width: 250px;
+	border-radius: 12px;
+	font-weight: bold;
+}
+
+.button1 {
+	background-color: #373737;
+	padding: 15px 32px;
+	text-align: center;
+	margin: 15px;
+	font-size: 16px;
+	box-shadow: 0 8px 16px 0;
+	width: 150px;
+	border-radius: 12px;
+	/* display: inline-block; */
+	 float: right;
+	font-weight: bold;
+}
+
+.button:hover {
+	background-color: #4ABDAC;
+}
+
+a:visited {
+	color: #FC4A1A;
+	font-weight: bold;
+}
+
+a:link {
+	color: #FC4A1A;
+	font-weight: bold;
+}
+
 footer {
 	padding: 10px;
 	color: white;
 	background-color: #FC4A1A;
 	text-align: center;
 }
-.button{
-	background-color: #373737;
-    padding: 15px 32px;
-    text-align: center;
-    margin: 10px;
-    font-size: 16px;
-    box-shadow: 0 8px 16px 0 ;
-    width: 150px;
-    border-radius: 12px;
-    display: column;
-    font-weight: bold;
-   
-}
-
- .button:hover {
-    background-color: #4ABDAC;
-}
-a:visited {
-    color: #FC4A1A;
-    font-weight: bold;
-}
-
-a:link {
-    color: #FC4A1A;
-    font-weight: bold;
-}
-
 }
