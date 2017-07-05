@@ -28,7 +28,7 @@ public class TacoPopulator implements CommandLineRunner {
 
 		TacoJoint condado = new TacoJoint(central, 1L, "Condados", "images/condadoTacos.jpeg", "4 out of 5 Tacos!",
 				"Condado Tacos... This establishment seems to be the new hip place to visit for DIY tacos.orem ipsum dolor sit "
-				+ "amet, consectetur adipiscing elit. Suspendisse tempus lorem eget auctor eleifend. ");
+				+ "amet, consectetur adipiscing elit. Suspendisse tempus lorem eget auctor eleifend.");
 
 		TacoJoint nada = new TacoJoint(central, 2L, "Nada", "images/nadaTacos.jpeg", "4 out of 5 Tacos!",
 				"Nada Tacos... This establishment seems to be the new hip place to visit for DIY tacos. Lorem ipsum dolor sit amet,"

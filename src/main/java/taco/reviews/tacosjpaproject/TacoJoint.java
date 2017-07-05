@@ -2,6 +2,7 @@ package taco.reviews.tacosjpaproject;
 
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,6 +18,7 @@ public class TacoJoint {
 	private String name;
 	private String imageURL;
 	private String taste;
+
 
 	@Lob
 	private String review;
