@@ -19,7 +19,7 @@ public class TacoJoint {
 	private String taste;
 
 	@Lob
-	String review;
+	private String review;
 
 	@ManyToOne
 	private Region region;
@@ -43,6 +43,7 @@ public class TacoJoint {
 	public String getTaste() {
 		return taste;
 	}
+
 
 	public String getReview() {
 		return review;

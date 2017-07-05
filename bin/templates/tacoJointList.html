@@ -10,8 +10,8 @@
 <body>
 	<div class="container">
 		<ul id="liststyle">
-		<h3> These are the taco joints located in this region:<li th:text="${region.name}"></li></h3>
-			
+		<h3> These are the best taco joints located in the: </h3>
+			<h2 th:text="${region.name}"></h2>
 			<li th:each="currentTacoJoint:${region.tacos}">
 			<img class="images1" th:src="${currentTacoJoint.imageURL}" /> <br>
 				<button class="button">
