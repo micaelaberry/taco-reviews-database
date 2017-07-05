@@ -57,7 +57,7 @@ public class TacoJoint {
 	private TacoJoint() {
 	}
 
-	public TacoJoint(Region region, Long id, String name, String imageURL, String taste, String review) {
+	public TacoJoint(Region region, Long id, String name, String imageURL, String review, String taste) {
 		this.region = region;
 		this.id = id;
 		this.name = name;

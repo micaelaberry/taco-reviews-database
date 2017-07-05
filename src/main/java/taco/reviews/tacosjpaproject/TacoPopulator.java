@@ -68,12 +68,12 @@ public class TacoPopulator implements CommandLineRunner {
 				"4.5 out of 5 Tacos!");
 
 		TacoJoint jalapenos = new TacoJoint(east, 6L, "Los Jalapenos", "images/jalapenosTacos.jpeg",
-				"3.5 out of 5 Tacos!",
 				"Los Jalapenos Tacos... This establishment seems to be the new hip place to visit for DIY tacos. Suspendisse tempus lorem eget auctor eleifend.Lorem ipsum dolor sit amet,"
 						+ " consectetur adipiscing elit. Ut suscipit semper convallis.Lorem ipsum dolor sit amet,"
 						+ " consectetur adipiscing elit. Ut suscipit semper convallis Suspendisse tempus lorem eget auctor eleifend.Lorem ipsum dolor sit amet,"
 						+ " consectetur adipiscing elit. Ut suscipit semper convallis.Lorem ipsum dolor sit amet,"
-						+ " consectetur adipiscing elit. Ut suscipit semper convallis");
+						+ " consectetur adipiscing elit. Ut suscipit semper convallis",
+				"3.5 out of 5 Tacos!");
 
 		TacoJoint guachos = new TacoJoint(north, 7L, "Los Guachos", "images/guachosTacos.jpeg",
 				"Los Guachos Tacos... This establishment seems to be the new hip place to visit for DIY tacos. Lorem ipsum dolor sit amet,"
@@ -89,8 +89,6 @@ public class TacoPopulator implements CommandLineRunner {
 						+ " consectetur adipiscing elit. Ut suscipit semper convallis.Lorem ipsum dolor sit amet,"
 						+ " consectetur adipiscing elit. Ut suscipit semper convallis",
 				"4.5 out of 5 Tacos!");
-
-
 
 		jointRepo.save(condado);
 		jointRepo.save(nada);
