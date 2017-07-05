@@ -90,13 +90,7 @@ public class TacoPopulator implements CommandLineRunner {
 						+ " consectetur adipiscing elit. Ut suscipit semper convallis",
 				"4.5 out of 5 Tacos!");
 
-		// TacoJoint tacoloco = new TacoJoint(north, 8L, "Taco Loco",
-		// "images/tacolocoTacos.jpeg", "4.5 out of 5 Tacos!",
-		// "Taco Loco Tacos... This establishment seems to be the new hip place
-		// to visit for DIY tacos. Lorem ipsum dolor sit amet,"
-		// + " consectetur adipiscing elit. Ut suscipit semper convallis. Nam
-		// interdum in turpis at lobortis. Aenean sit amet"
-		// + " aliquam augue. Aliquam scelerisque nisl nibh, tempor posuere");
+
 
 		jointRepo.save(condado);
 		jointRepo.save(nada);
