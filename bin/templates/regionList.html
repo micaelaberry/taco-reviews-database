@@ -9,17 +9,17 @@
 </header>
 <body>
 	<div class="container">
-		<h3>Here are the regions where the best tacos in Columbus are located</h3>
+		<h3>Here are the regions where the best tacos in Columbus are
+			located</h3>
 		<div class="images2container">
 			<img th:src="@{/images/ohioTaco.jpg}" src="/images/ohioTacos.jpg"
 				class="images2" alt="tacos" />
-			<ul id="liststyle" th:each="currentRegion:${region}">
-				<li><button class="button1">
+			<ul id="liststyle">
+				<li th:each="currentRegion:${region}"><button class="button1">
 						<a th:href="@{/tacojoints(id=${currentRegion.id})}"
 							th:text="${currentRegion.name}"></a>
 					</button></li>
 			</ul>
-
 		</div>
 	</div>
 </body>

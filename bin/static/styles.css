@@ -24,6 +24,8 @@ body {
 }
 
 #liststyle li {
+	flex-direction: column;
+	display: flex-end;
 	list-style-type: none;
 }
 
@@ -41,6 +43,14 @@ h3 {
 	margin: left;
 }
 
+div {
+	max-width: 1150px;
+	min-width: 400px;
+	padding-top: 10px;
+	padding-bottom: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
 .images1 {
 	width: 260px;
 	height: 200px;
@@ -50,16 +60,17 @@ h3 {
 }
 
 .images2 {
-	max-width: 30%;
-	height: auto;
-	margin: 1px;
+	width: 450px;
+	height: 450px;
+	margin-right: 100px;
 }
 
 .images2container {
-	display: inline-block;
+	display: flex;
 	flex-direction: row;
 	align-content: left;
 }
+
 
 .images {
 	max-width: 60%;
@@ -68,14 +79,6 @@ h3 {
 	border: solid black;
 }
 
-div {
-	max-width: 1150px;
-	min-width: 400px;
-	padding-top: 10px;
-	padding-bottom: 40px;
-	padding-left: 20px;
-	padding-right: 20px;
-}
 
 .imageContainer {
 	display: inline-block;
@@ -104,8 +107,6 @@ div {
 	box-shadow: 0 8px 16px 0;
 	width: 150px;
 	border-radius: 12px;
-	/* display: inline-block; */
-	float: right;
 	font-weight: bold;
 }
 
