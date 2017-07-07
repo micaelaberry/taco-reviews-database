@@ -16,10 +16,9 @@ public class TacoJoint {
 
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long tacoJointId;
 	private String name;
 	private String imageURL;
-	private String tag;
 
 	@Lob
 	private String taste;
@@ -45,8 +44,8 @@ public class TacoJoint {
 		this.region = region;
 	}
 
-	public Long getId() {
-		return id;
+	public Long getTacoJointId() {
+		return tacoJointId;
 	}
 
 	public String getImageURL() {
@@ -68,32 +67,28 @@ public class TacoJoint {
 	private TacoJoint() {
 	}
 
-	public String getTag() {
-		return tag;
-	}
-
 	public void remove(Tag tag) {
-		tag.remove(tag);
+		tags.remove(tag);
 	}
 
-	public TacoJoint(Region region, Long id, String name, String imageURL, String review, String taste, String tag) {
+	public TacoJoint(Region region, Long id, String name, String imageURL, String review, String taste, Tag ...tags) {
 		this.region = region;
-		this.id = id;
+		this.tacoJointId = id;
 		this.name = name;
 		this.imageURL = imageURL;
 		this.review = review;
 		this.taste = taste;
-		this.tag = tag;
-	}
-
-	public TacoJoint(Region region, String name, String review) {
-		this.region = region;
-		this.name = name;
-		this.review = review;
-	}
-
-	public TacoJoint(Region region, String name, Tag... tags) {
 		this.tags = new HashSet<>(Arrays.asList(tags));
 	}
+
+//	public TacoJoint(Region region, String name, String review) {
+//		this.region = region;
+//		this.name = name;
+//		this.review = review;
+//	}
+
+//	public TacoJoint(Region region, String name, Tag... tags) {
+//		this.tags = new HashSet<>(Arrays.asList(tags));
+//	}
 
 }

@@ -17,16 +17,46 @@
 			<img class="images" th:src="${tacoJoint.imageURL}" />
 			<p th:text="${tacoJoint.review}"></p>
 			<p th:text="${tacoJoint.taste}"></p>
-			<p th:text= "'(taco tags) ' + ${tacoJoint.tag}"></p>
-			
+
+			<li th:each="tag: ${tacoJoint.tags}"><a th:text="${tag.name}"></a></li>
+
 			<a th:href="@{/tacoregions(id=${regionsAsCollection})}">Click to
 				go back to all the Taco Regions</a>
 		</div>
+
+
 		<form method="POST">
+			<input type="hidden" name="id" th:value="${tacoJoint.tacoJointId}" /> <label>Add
+				tags: <textarea name="tags" type="text" rows="1" cols="50"></textarea>
+			</label> <br />
+			<button th:formaction="@{/singleReview}">Create Tag!</button>
+
+			<ul>
+				<li th:each="currentTag: ${tacoJoint.tags}">
+					<span th:text="${currentTag.name}"></span>
+					<button th:formaction="@{/tags/delete/{tagId}(tagId=${currentTag.tagId})}">delete me</button>
+				</li>
+			</ul>
+
+		</form>
+
+
+
+
+
+		<!-- <form method="POST">
 			<input type="hidden" name="tacoJoint" th:value="${tacoJoint.id}" />
 			<label>Add tags: <textarea name="tags" rows="1" cols="50"></textarea></label>
-			<button th:formaction="@{/addTag}">create me!</button>
-		</form>
+			<button th:formaction="@{/addTags}">create me!</button>
+
+			<ul>
+				<li th:each="currentTacoJoint: ${tacoJoint.tag}"><a
+					th:text="${tacoJoint.tag}"
+					th:href="@{/tacojoints(tacoJointTag=${tacoJoint.tag})}" />
+					<button th:formaction="@{/deleteTag}" name="tacoJointTag"
+						th:value="${tacoJoint.tag}">delete me</button></li>
+			</ul>
+		</form> -->
 	</div>
 </body>
 <footer>Columbus Taco Reviews Copyright 2017</footer>

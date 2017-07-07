@@ -15,7 +15,7 @@
 			<li th:each="currentTacoJoint:${region.tacos}">
 			<img class="images1" th:src="${currentTacoJoint.imageURL}" /> <br>
 				<button class="button">
-					<a th:href="@{/singleReview(id=${currentTacoJoint.id})}"
+					<a th:href="@{/singleReview(id=${currentTacoJoint.tacoJointId})}"
 						th:text="${currentTacoJoint.name}"></a>
 				</button> </br></li>
 		</ul>
