@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="styles.css"></link>
 <head>
-<title>Tags</title>
+<title>Taco Tags</title>
 </head>
+<header>
+	<h1>Columbus, Ohio Tacos Reviews</h1>
+</header>
 <body>
-	<h1>Tags</h1>
-
+	<div class="container">
+		<h3>Here are the tags for tacos</h3>
 	<form>
 			<ul>
 				
@@ -15,5 +19,9 @@
 
 			</ul>
 	</form>
+			<br> <a th:href="@{/tacoregions(id=${tacoRegionsAsCollection})}">Click
+			to read all Taco Regions</a></br>
+	</div>
 </body>
+<footer>Columbus Taco Reviews Copyright 2017</footer>
 </html>

@@ -5,8 +5,8 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.OrderBy;
 
 @Entity
 public class Tag {
@@ -20,6 +20,7 @@ public class Tag {
 	@ManyToMany(mappedBy= "tags")
 	public Set<TacoJoint> tacoJoints;
 
+	@OrderBy("name")
 	public Set<TacoJoint> getTacoJoints(){
 		return tacoJoints;
 	}
@@ -33,7 +34,6 @@ public class Tag {
 		return name;
 	}
 	
-
 	public Tag(){
 	}
 

@@ -48,6 +48,11 @@ h3 {
 	margin: left;
 }
 
+p1{
+	font-weight: 800;
+	text-decoration: underline;
+}
+
 div {
 	max-width: 1150px;
 	min-width: 400px;

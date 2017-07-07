@@ -26,7 +26,7 @@ public class TacoController {
 		return "regionList";
 	}
 	
-	@RequestMapping("/allReviews") //returns all reviews tacos
+	@RequestMapping("/allTacoReviews") //returns all reviews tacos
 	public String retrieveTacoJoint(Model model) {
 		model.addAttribute("tacoJoint", jointRepo.findAll());
 		return "allReviews";
@@ -51,6 +51,12 @@ public class TacoController {
 	return "tags";
 	}
 	
+	@RequestMapping("/specificTag") //pulls one review
+	public String retrieveSpecificTag(@RequestParam("id") long id, Model model) {
+		model.addAttribute(tagRepo.findOne(id));
+		return "singleReview";
+	}
+	
 	@RequestMapping("/tags/delete/{id}")
 	public String deleteFood(@PathVariable long id) {
 		Tag toDelete = tagRepo.findOne(id);
@@ -59,8 +65,9 @@ public class TacoController {
 			jointRepo.save(tacoJoint);
 		}
 		tagRepo.delete(toDelete);
-		return "redirect:/tacoregions";
-	}
+		return "redirect:/tacoregion";
+				 //"tacojoints?id=" + tacoJointId;
+		}	
 	
 //	@RequestMapping("/addTags")
 //	public String addTags(@RequestParam("regionId") Long id, @RequestParam("name") String newTagName) {

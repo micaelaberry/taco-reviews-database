@@ -18,8 +18,12 @@
 			<p th:text="${tacoJoint.review}"></p>
 			<p th:text="${tacoJoint.taste}"></p>
 
+		<ul id="liststyle1">
+		<p1>Taco Tags</p1>
 			<li th:each="tag: ${tacoJoint.tags}"><a th:text="${tag.name}"></a></li>
-
+		</ul>
+		
+		
 			<a th:href="@{/tacoregions(id=${regionsAsCollection})}">Click to
 				go back to all the Taco Regions</a>
 		</div>
@@ -32,6 +36,7 @@
 			<button th:formaction="@{/singleReview}">Create Tag!</button>
 
 			<ul>
+			<input type="hidden" name="id" th:value="${tacoJoint.tacoJointId}" />
 				<li th:each="currentTag: ${tacoJoint.tags}">
 					<span th:text="${currentTag.name}"></span>
 					<button th:formaction="@{/tags/delete/{tagId}(tagId=${currentTag.tagId})}">delete me</button>

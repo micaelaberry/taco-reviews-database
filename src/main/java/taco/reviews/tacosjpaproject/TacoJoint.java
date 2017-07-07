@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OrderBy;
 
 @Entity
 public class TacoJoint {
@@ -31,7 +32,8 @@ public class TacoJoint {
 
 	@ManyToMany
 	private Set<Tag> tags;
-
+	
+	@OrderBy("name")
 	public Set<Tag> getTags() {
 		return tags;
 	}
