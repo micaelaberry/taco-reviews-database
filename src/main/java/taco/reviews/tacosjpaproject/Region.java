@@ -14,6 +14,7 @@ public class Region {
 	@GeneratedValue
 	private Long id;
 	private String name;
+	private String review;
 
 	@OneToMany(mappedBy="region")
 	private Set<TacoJoint> tacos;
@@ -31,12 +32,16 @@ public class Region {
 		return name;
 	}
 
+	public String getReview() {
+		return review;
+	}
+
 	public Region(String name) {
 		this.name = name;
 	}
-
+	
 	public Region() {
 	}
-	
+
 
 }

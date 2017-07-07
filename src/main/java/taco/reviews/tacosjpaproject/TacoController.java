@@ -21,6 +21,12 @@ public class TacoController {
 		model.addAttribute("region", regionRepo.findAll());
 		return "regionList";
 	}
+	
+	@RequestMapping("/allReviews") //returns all reviews tacos
+	public String retrieveTacoJoint(Model model) {
+		model.addAttribute("tacoJoint", jointRepo.findAll());
+		return "allReviews";
+	}
 
 	@RequestMapping("/tacojoints") //returns taco joints from specific region
 	public String retrieveTacoJoints(@RequestParam("id") long id, Model model) {

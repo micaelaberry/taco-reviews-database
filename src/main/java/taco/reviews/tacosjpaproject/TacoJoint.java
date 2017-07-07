@@ -1,11 +1,14 @@
 package taco.reviews.tacosjpaproject;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -16,7 +19,8 @@ public class TacoJoint {
 	private Long id;
 	private String name;
 	private String imageURL;
-	
+	private String tag;
+
 	@Lob
 	private String taste;
 
@@ -25,6 +29,13 @@ public class TacoJoint {
 
 	@ManyToOne
 	private Region region;
+
+	@ManyToMany
+	private Set<Tag> tags;
+
+	public Set<Tag> getTags() {
+		return tags;
+	}
 
 	public Region getRegion() {
 		return region;
@@ -57,14 +68,32 @@ public class TacoJoint {
 	private TacoJoint() {
 	}
 
-	public TacoJoint(Region region, Long id, String name, String imageURL, String review, String taste) {
+	public String getTag() {
+		return tag;
+	}
+
+	public void remove(Tag tag) {
+		tag.remove(tag);
+	}
+
+	public TacoJoint(Region region, Long id, String name, String imageURL, String review, String taste, String tag) {
 		this.region = region;
 		this.id = id;
 		this.name = name;
 		this.imageURL = imageURL;
 		this.review = review;
 		this.taste = taste;
+		this.tag = tag;
 	}
 
+	public TacoJoint(Region region, String name, String review) {
+		this.region = region;
+		this.name = name;
+		this.review = review;
+	}
+
+	public TacoJoint(Region region, String name, Tag... tags) {
+		this.tags = new HashSet<>(Arrays.asList(tags));
+	}
 
 }

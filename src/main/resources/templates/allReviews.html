@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="styles.css"></link>
+<head>
+<title>Taco Regions</title>
+</head>
+<header>
+	<h1>Columbus, Ohio Tacos Reviews</h1>
+</header>
+<body>
+	<div class="container">
+		<h3>Here is a list of all the taco places from all regions</h3>
+		<div class="allReviewsContainer">
+			<ul id="liststyle1">
+				<li th:each="tacoJoint:${tacoJoint}"><img class="images1"
+					th:src="${tacoJoint.imageURL}" /> <br>
+					<button class="button">
+						<a th:href="@{/singleReview(id=${tacoJoint.id})}"
+							th:text="${tacoJoint.name}"></a>
+					</button> </br></li>
+			</ul>
+		</div>
+	</div>
+</body>
+<footer>Columbus Taco Reviews Copyright 2017</footer>
+</html>

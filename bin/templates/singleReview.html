@@ -10,18 +10,24 @@
 </header>
 <body>
 	<div class="container">
-	
+
 		<div th:each="tacoJoint: ${tacoJoint}">
-		<h3 th:text="${tacoJoint.name}"></h3>
+			<h3 th:text="${tacoJoint.name}"></h3>
 
 			<img class="images" th:src="${tacoJoint.imageURL}" />
 			<p th:text="${tacoJoint.review}"></p>
 			<p th:text="${tacoJoint.taste}"></p>
-
+			<p th:text= "'(taco tags) ' + ${tacoJoint.tag}"></p>
+			
 			<a th:href="@{/tacoregions(id=${regionsAsCollection})}">Click to
 				go back to all the Taco Regions</a>
 		</div>
-</div>
+		<form method="POST">
+			<input type="hidden" name="tacoJoint" th:value="${tacoJoint.id}" />
+			<label>Add tags: <textarea name="tags" rows="1" cols="50"></textarea></label>
+			<button th:formaction="@{/addTag}">create me!</button>
+		</form>
+	</div>
 </body>
-<footer>Columbus Taco Reviews Copyright 2017</footer> 
+<footer>Columbus Taco Reviews Copyright 2017</footer>
 </html>
