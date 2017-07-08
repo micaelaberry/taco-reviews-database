@@ -1,5 +1,8 @@
 package taco.reviews.tacosjpaproject;
 
+import java.util.Collections;
+import java.util.HashSet;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -15,69 +18,68 @@ public class TacoController {
 
 	@Resource
 	private TacoJointRepository jointRepo;
-	
+
 	@Resource
 	private TagRepository tagRepo;
 
-	
-	@RequestMapping("/tacoregions") //returns all regions for tacos
+	@RequestMapping("/tacoregions") // returns all regions for tacos
 	public String retrieveRegion(Model model) {
 		model.addAttribute("region", regionRepo.findAll());
 		return "regionList";
 	}
-	
-	@RequestMapping("/allTacoReviews") //returns all reviews tacos
+
+	@RequestMapping("/allTacoJoints") // returns all taco joints
 	public String retrieveTacoJoint(Model model) {
 		model.addAttribute("tacoJoint", jointRepo.findAll());
-		return "allReviews";
+		return "allTacoJoints";
 	}
 
-	@RequestMapping("/tacojoints") //returns taco joints from specific region
+	@RequestMapping("/tacojoints") // returns taco joints from specific region
 	public String retrieveTacoJoints(@RequestParam("id") long id, Model model) {
 		model.addAttribute(regionRepo.findOne(id));
 		return "tacoJointList";
 	}
 
-
-	@RequestMapping("/singleReview") //pulls one review
+	@RequestMapping("/singleReview") // pulls one review
 	public String retrieveSingleReview(@RequestParam("id") long id, Model model) {
 		model.addAttribute(jointRepo.findOne(id));
 		return "singleReview";
 	}
 
-	@RequestMapping("/tags")
-	public String showTags(Model model){
-	model.addAttribute("tags", tagRepo.findAll());
-	return "tags";
+	@RequestMapping("/allTags") // lists all the taco tags
+	public String retrieveTags(Model model) {
+		model.addAttribute("tags", tagRepo.findAll());
+		return "tags";
 	}
-	
-	@RequestMapping("/specificTag") //pulls one review
+
+	@RequestMapping("/tag")
 	public String retrieveSpecificTag(@RequestParam("id") long id, Model model) {
-		model.addAttribute(tagRepo.findOne(id));
-		return "singleReview";
+		Tag selectedTag = tagRepo.findOne(id);
+		model.addAttribute(selectedTag);
+		return "tags";
 	}
-	
-	@RequestMapping("/tags/delete/{id}")
-	public String deleteFood(@PathVariable long id) {
+
+	@RequestMapping("/deleteTag")
+	public String deleteFood(@RequestParam long id) {
 		Tag toDelete = tagRepo.findOne(id);
 		for(TacoJoint tacoJoint: toDelete.getTacoJoints()) {
 			tacoJoint.remove(toDelete);
 			jointRepo.save(tacoJoint);
 		}
 		tagRepo.delete(toDelete);
-		return "redirect:/tacoregion";
-				 //"tacojoints?id=" + tacoJointId;
-		}	
-	
-//	@RequestMapping("/addTags")
-//	public String addTags(@RequestParam("regionId") Long id, @RequestParam("name") String newTagName) {
-//		
-//		Region selected = regionRepo.findOne(id);
-//		TacoJoint newTag = new TacoJoint(selected, newTagName, tagRepo.findByName("yummy"));
-//		jointRepo.save(newTag);
-//		
-//		return "redirect:/region?id=" + id;
-//	}
-	
+		return "redirect:/tacoregions";
+	//	return "redirect:/tacoJoint?id=" + tacoJointId;		
+		}
 
+	@RequestMapping("/createTag")
+	public String addTag(@RequestParam (value = "id") Long id ,String name) {
+		Tag tag = new Tag(name);
+		tagRepo.save(tag);
+		TacoJoint tacoJoint = jointRepo.findOne(id);
+			tacoJoint.add(tag);
+			jointRepo.save(tacoJoint);
+		return "redirect:/tacoregions";
+	}
+	
+	
 }

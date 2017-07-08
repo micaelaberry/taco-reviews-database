@@ -18,6 +18,7 @@ public class TacoJoint {
 	@Id
 	@GeneratedValue
 	private Long tacoJointId;
+	
 	private String name;
 	private String imageURL;
 
@@ -66,16 +67,20 @@ public class TacoJoint {
 		return name;
 	}
 
-	private TacoJoint() {
+	public TacoJoint() {
 	}
 
 	public void remove(Tag tag) {
 		tags.remove(tag);
 	}
+	
+	public void add(Tag tag) {
+		tags.add(tag);
+	}
 
-	public TacoJoint(Region region, Long id, String name, String imageURL, String review, String taste, Tag ...tags) {
+	public TacoJoint(Region region, Long tacoJointId, String name, String imageURL, String review, String taste, Tag ...tags) {
 		this.region = region;
-		this.tacoJointId = id;
+		this.tacoJointId = tacoJointId;
 		this.name = name;
 		this.imageURL = imageURL;
 		this.review = review;
