@@ -60,25 +60,26 @@ public class TacoController {
 	}
 
 	@RequestMapping("/deleteTag")
-	public String deleteFood(@RequestParam long id) {
-		Tag toDelete = tagRepo.findOne(id);
+	public String deleteTag(@RequestParam long id, @RequestParam long tagId) {
+		Tag toDelete = tagRepo.findOne(tagId);
 		for(TacoJoint tacoJoint: toDelete.getTacoJoints()) {
 			tacoJoint.remove(toDelete);
 			jointRepo.save(tacoJoint);
 		}
 		tagRepo.delete(toDelete);
-		return "redirect:/tacoregions";
-	//	return "redirect:/tacoJoint?id=" + tacoJointId;		
+		//return "redirect:/tacoregions";
+		return "redirect:/singleReview?id=" + id;		
 		}
 
 	@RequestMapping("/createTag")
-	public String addTag(@RequestParam (value = "id") Long id ,String name) {
+	public String addTag(@RequestParam (value = "id") Long id, String name) {
 		Tag tag = new Tag(name);
 		tagRepo.save(tag);
 		TacoJoint tacoJoint = jointRepo.findOne(id);
 			tacoJoint.add(tag);
 			jointRepo.save(tacoJoint);
-		return "redirect:/tacoregions";
+			return "redirect:/singleReview?id=" + id;
+		//return "redirect:/tacoregions";
 	}
 	
 	

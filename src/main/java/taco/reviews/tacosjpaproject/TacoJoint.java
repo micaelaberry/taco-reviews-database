@@ -63,6 +63,7 @@ public class TacoJoint {
 		return review;
 	}
 
+	@OrderBy("name")
 	public String getName() {
 		return name;
 	}

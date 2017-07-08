@@ -18,33 +18,32 @@
 			<p th:text="${tacoJoint.review}"></p>
 			<p th:text="${tacoJoint.taste}"></p>
 
-		<ul id="liststyle1">
-		<p1>Taco Tags</p1>
-			<li th:each="tag: ${tacoJoint.tags}"><a th:text="${tag.name}"></a></li>
-		</ul>
-		
-		
+			<ul id="liststyle1">
+				<p1>Taco Tags</p1>
+				<li th:each="tag: ${tacoJoint.tags}"><a th:text="${tag.name}"></a></li>
+			</ul>
+
+
 			<a th:href="@{/tacoregions(id=${regionsAsCollection})}">Click to
 				go back to all the Taco Regions</a>
 		</div>
 
 
 		<form method="POST">
-			<input type="hidden" name="id" th:value="${tacoJoint.tacoJointId}" /> <label>Add
-				tags: <input name="name" type="text" />
+			<input type="hidden" name="id" th:value="${tacoJoint.tacoJointId}" />
+			<label>Add tags: <input name="name" type="text" />
 			</label>
 			<button th:formaction="@{/createTag}">Create Tag!</button>
-</form>
+		</form>
 
-<!-- <form>
+		<form>
 			<ul>
-				<input type="hidden" name="id" th:value="${tacoJoint.id}" />
-				<li th:each="currentTag: ${tacoJoint.tags}"><a
-					th:href:"@{/tag(id=$)) th:text="${currentTag.name}">
-						<button th:formaction="@{/deleteTag}">delete me</button></li>
+				<input type="hidden" name="id" th:value="${tacoJoint.tacoJointId}" />
+				<li th:each="currentTag: ${tacoJoint.tags}"><span
+					th:text="${currentTag.name}"></span>
+					<button name="tagId" th:value="${currentTag.tagId}" th:formaction="@{/deleteTag}">delete me</button></li>
 			</ul>
-
-		</form> -->
+		</form>
 
 	</div>
 </body>

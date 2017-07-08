@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 @Entity
 public class Region {
@@ -28,6 +29,7 @@ public class Region {
 		return id;
 	}
 
+	@OrderBy("name")
 	public String getName() {
 		return name;
 	}
@@ -35,7 +37,7 @@ public class Region {
 	public String getReview() {
 		return review;
 	}
-
+	
 	public Region(String name) {
 		this.name = name;
 	}
