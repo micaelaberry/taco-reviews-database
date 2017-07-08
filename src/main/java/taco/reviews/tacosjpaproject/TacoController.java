@@ -67,7 +67,6 @@ public class TacoController {
 			jointRepo.save(tacoJoint);
 		}
 		tagRepo.delete(toDelete);
-		//return "redirect:/tacoregions";
 		return "redirect:/singleReview?id=" + id;		
 		}
 
@@ -79,7 +78,7 @@ public class TacoController {
 			tacoJoint.add(tag);
 			jointRepo.save(tacoJoint);
 			return "redirect:/singleReview?id=" + id;
-		//return "redirect:/tacoregions";
+		
 	}
 	
 	
