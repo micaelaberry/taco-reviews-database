@@ -44,7 +44,8 @@
 					<button name="tagId" th:value="${currentTag.tagId}" th:formaction="@{/deleteTag}">delete me</button></li>
 			</ul>
 		</form>
-
+			<a th:href="@{/allTags}">Click to
+			 view all the taco tags</a>
 	</div>
 </body>
 <footer>Columbus Taco Reviews Copyright 2017</footer>

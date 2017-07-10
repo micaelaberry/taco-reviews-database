@@ -9,9 +9,11 @@
 </header>
 <body>
 	<div class="container">
+	
 		<h3>Here is a list of all the taco joints from all regions</h3>
-					<br> <a th:href="@{/tacoregions(id=${regionsAsCollection})}">Click
+		<br> <a th:href="@{/tacoregions(id=${regionsAsCollection})}">Click
 			to go back to all the Taco Regions</a></br>
+			
 		<div class="allReviewsContainer">
 			<ul id="liststyle1">
 				<li th:each="tacoJoint:${tacoJoint}"> <br>
